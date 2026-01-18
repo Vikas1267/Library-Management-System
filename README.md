@@ -127,6 +127,26 @@ Copy code
 | POST | `/books/return/{bookId}` | MEMBER |
 
 ---
+## Screenshots(Results) :
+![Screenshot 2026-01-17 220643.png](../../../Pictures/Screenshots/Screenshot%202026-01-17%20220643.png)
+
+![Screenshot 2026-01-17 220940.png](../../../Pictures/Screenshots/Screenshot%202026-01-17%20220940.png)
+
+![Screenshot 2026-01-18 162955.png](../../../Pictures/Screenshots/Screenshot%202026-01-18%20162955.png)
+
+![Screenshot 2026-01-18 221148.png](../../../Pictures/Screenshots/Screenshot%202026-01-18%20221148.png)
+
+![Screenshot 2026-01-18 221221.png](../../../Pictures/Screenshots/Screenshot%202026-01-18%20221221.png)
+
+![Screenshot 2026-01-18 230231.png](../../../Pictures/Screenshots/Screenshot%202026-01-18%20230231.png)
+
+![Screenshot 2026-01-18 231747.png](../../../Pictures/Screenshots/Screenshot%202026-01-18%20231747.png)
+
+![Screenshot 2026-01-18 233410.png](../../../Pictures/Screenshots/Screenshot%202026-01-18%20233410.png)
+
+![Screenshot 2026-01-19 001009.png](../../../Pictures/Screenshots/Screenshot%202026-01-19%20001009.png)
+
+![Screenshot 2026-01-19 001251.png](../../../Pictures/Screenshots/Screenshot%202026-01-19%20001251.png)
 
 ## 🧪 Sample Requests
 
