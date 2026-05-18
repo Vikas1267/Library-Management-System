@@ -39,8 +39,6 @@ controller → service → repository → database
 ↓ ↓
 DTOs business logic
 
-markdown
-Copy code
 
 ✔ Controllers expose **DTOs only**  
 ✔ Entities are **never leaked**  
@@ -77,7 +75,7 @@ JWT is required for **all protected endpoints**.
    Authorization: Bearer <JWT_TOKEN>
 
 yaml
-Copy code
+
 4. JWT filter validates token & sets security context
 
 ---
@@ -180,8 +178,7 @@ Content-Type: application/json
 "password": "member123"
 }
 Authorized Request
-http
-Copy code
+
 GET /books
 Authorization: Bearer <JWT_TOKEN>
 ⚠️ Error Handling
