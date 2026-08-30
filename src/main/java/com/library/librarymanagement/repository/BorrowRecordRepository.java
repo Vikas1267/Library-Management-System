@@ -9,9 +9,11 @@ import java.util.Optional;
 
 public interface BorrowRecordRepository extends JpaRepository<BorrowRecord, Long> {
 
-    // For Phase 16: find active (not yet returned) record for a book
     Optional<BorrowRecord> findByBookAndReturnedAtIsNull(Book book);
 
-    // For history APIs
+    List<BorrowRecord> findByUserEmailAndReturnedAtIsNull(String userEmail);
+
     List<BorrowRecord> findByUserEmail(String userEmail);
+
+    List<BorrowRecord> findByReturnedAtIsNull();
 }

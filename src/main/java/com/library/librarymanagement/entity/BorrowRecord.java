@@ -19,9 +19,11 @@ public class BorrowRecord {
 
     private LocalDateTime issuedAt;
 
+    private LocalDateTime dueDate;
+
     private LocalDateTime returnedAt;
 
-    // getters & setters
+    private Double fineAmount = 0.0;
 
     public Long getId() {
         return id;
@@ -39,8 +41,16 @@ public class BorrowRecord {
         return issuedAt;
     }
 
+    public LocalDateTime getDueDate() {
+        return dueDate;
+    }
+
     public LocalDateTime getReturnedAt() {
         return returnedAt;
+    }
+
+    public Double getFineAmount() {
+        return fineAmount;
     }
 
     public void setId(Long id) {
@@ -59,7 +69,15 @@ public class BorrowRecord {
         this.issuedAt = issuedAt;
     }
 
+    public void setDueDate(LocalDateTime dueDate) {
+        this.dueDate = dueDate;
+    }
+
     public void setReturnedAt(LocalDateTime returnedAt) {
         this.returnedAt = returnedAt;
+    }
+
+    public void setFineAmount(Double fineAmount) {
+        this.fineAmount = fineAmount;
     }
 }

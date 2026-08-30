@@ -3,6 +3,7 @@ package com.library.librarymanagement.service;
 import com.library.librarymanagement.controller.dto.BookRequest;
 import com.library.librarymanagement.controller.dto.BookResponse;
 import com.library.librarymanagement.entity.Book;
+import com.library.librarymanagement.exception.BookNotFoundException;
 import com.library.librarymanagement.repository.BookRepository;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -24,6 +25,21 @@ public class BookService {
         book.setIsbn(request.getIsbn());
         book.setAvailable(true);
         bookRepository.save(book);
+    }
+
+    public void updateBook(Long id, BookRequest request) {
+        Book book = bookRepository.findById(id)
+                .orElseThrow(() -> new BookNotFoundException("Book not found with id " + id));
+        book.setTitle(request.getTitle());
+        book.setAuthor(request.getAuthor());
+        book.setIsbn(request.getIsbn());
+        bookRepository.save(book);
+    }
+
+    public void deleteBook(Long id) {
+        Book book = bookRepository.findById(id)
+                .orElseThrow(() -> new BookNotFoundException("Book not found with id " + id));
+        bookRepository.delete(book);
     }
 
     public Page<BookResponse> getBooks(Pageable pageable) {

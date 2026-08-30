@@ -2,6 +2,7 @@ package com.library.librarymanagement.service;
 
 import com.library.librarymanagement.controller.dto.LoginRequest;
 import com.library.librarymanagement.controller.dto.RegisterRequest;
+import com.library.librarymanagement.entity.Role;
 import com.library.librarymanagement.entity.User;
 import com.library.librarymanagement.repository.UserRepository;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -24,24 +25,24 @@ public class AuthService {
         this.authenticationManager = authenticationManager;
     }
 
-    // REGISTER
     public void register(RegisterRequest request) {
 
         if (userRepository.existsByEmail(request.getEmail())) {
             throw new RuntimeException("Email already registered");
         }
 
+        Role assignedRole = request.getRole() != null ? request.getRole() : Role.MEMBER;
+
         User user = User.builder()
                 .name(request.getName())
                 .email(request.getEmail())
                 .password(passwordEncoder.encode(request.getPassword()))
-                .role(request.getRole())
+                .role(assignedRole)
                 .build();
 
         userRepository.save(user);
     }
 
-    // LOGIN
     public void login(LoginRequest request) {
 
         UsernamePasswordAuthenticationToken authToken =
@@ -51,6 +52,5 @@ public class AuthService {
                 );
 
         authenticationManager.authenticate(authToken);
-        // If credentials are wrong → exception is thrown automatically
     }
 }

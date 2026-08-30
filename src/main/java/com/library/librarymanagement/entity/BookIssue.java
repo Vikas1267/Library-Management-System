@@ -31,7 +31,6 @@ public class BookIssue {
         this.issuedAt = LocalDateTime.now();
     }
 
-    // getters & setters
     public Long getId() { return id; }
 
     public Book getBook() { return book; }

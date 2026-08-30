@@ -22,7 +22,6 @@ public class Book {
     @Column(nullable = false)
     private boolean available = true;
 
-    // ===== Constructors =====
     public Book() {}
 
     public Book(String title, String author, String isbn) {
@@ -32,7 +31,6 @@ public class Book {
         this.available = true;
     }
 
-    // ===== Getters & Setters =====
     public Long getId() { return id; }
 
     public String getTitle() { return title; }

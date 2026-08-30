@@ -11,5 +11,5 @@ public class RegisterRequest {
     private String name;
     private String email;
     private String password;
-    private Role role; // LIBRARIAN or MEMBER
+    private Role role;
 }
